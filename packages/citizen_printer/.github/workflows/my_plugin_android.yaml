@@ -1,0 +1,21 @@
+name: citizen_printer_android
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/citizen_printer_android.yaml"
+      - "src/citizen_printer_android/**"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/citizen_printer_android.yaml"
+      - "src/citizen_printer_android/**"
+
+jobs:
+  build:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+    with:
+      flutter_channel: stable
+      flutter_version: 2.10.1
+      working_directory: src/citizen_printer_android
